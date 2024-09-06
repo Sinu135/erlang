@@ -12,17 +12,21 @@
 % Ninguna.
 %
 % Historial de Cambios:
-% 05/09/2024 - 1.0 - Creación del módulo con función básica `create_tree/0, print_tree/1`.
+% 05/09/2024 - 1.0 - Creación del módulo con función básica `print/0`.
 %-----------------------------------------------------------------------------
 
 -module(program17).
--export([create_tree/0, print_tree/1]).
+-export([print/0]).
 
 %% Definición del registro 'node'
 -record(node, {
     value         :: any(),
     children = [] :: [#node{}]
 }).
+
+print()->
+	Tree = create_tree(),
+	print_tree(Tree).
 
 %% Función para crear un árbol de ejemplo
 create_tree() ->

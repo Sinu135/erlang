@@ -12,12 +12,12 @@
 % Ninguna.
 %
 % Historial de Cambios:
-% 05/09/2024 - 1.0 - Creación del módulo con función básica `print_tree/1, example_tree/0`.
+% 05/09/2024 - 1.0 - Creación del módulo con función básica `print/0`.
 %-----------------------------------------------------------------------------
 
 
 -module(program09).
--export([print_tree/1, example_tree/0]).
+-export([print/0]).
 
 %% Definición del tipo de árbol binario
 -type binary_tree(T) ::
@@ -25,6 +25,11 @@
      , left := binary_tree(T) | nil
      , right := binary_tree(T) | nil
      }.
+
+print()->
+	Tree = example_tree(),
+	print_tree(Tree).
+
 
 %% Función para imprimir el árbol en orden in-order
 print_tree(nil) ->
